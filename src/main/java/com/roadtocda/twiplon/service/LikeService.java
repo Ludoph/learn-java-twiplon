@@ -3,6 +3,8 @@ package com.roadtocda.twiplon.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.roadtocda.twiplon.model.Likes;
+import com.roadtocda.twiplon.model.Post;
 import com.roadtocda.twiplon.repository.LikesRepository;
 import com.roadtocda.twiplon.repository.PostRepository;
 import com.roadtocda.twiplon.repository.UsersRepository;
@@ -20,9 +22,10 @@ public class LikeService {
 	private PostRepository postRepository;
 
 	
-	
-	
-	
+	public Likes likePost(Likes Likes) {
+		Likes likePost = likeRepository.save(Likes);
+		return likePost;
+	}
 	
 	
 	public LikesRepository getLikeRepository() {
