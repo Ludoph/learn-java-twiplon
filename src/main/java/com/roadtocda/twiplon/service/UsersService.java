@@ -31,8 +31,6 @@ public class UsersService {
 			usersRepository.deleteById(id);
 		}
 		
-	
-		
 		public UsersRepository getUsersRepository() {
 			return usersRepository;
 		}

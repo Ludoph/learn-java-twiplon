@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.roadtocda.twiplon.model.Post;
+import com.roadtocda.twiplon.repository.CommentRepository;
 import com.roadtocda.twiplon.repository.LikesRepository;
 import com.roadtocda.twiplon.repository.PostRepository;
 import com.roadtocda.twiplon.repository.UsersRepository;
@@ -22,6 +23,9 @@ public class PostService {
 	@Autowired
 	private LikesRepository likesRepository;
 	
+	@Autowired 
+	private CommentRepository commentRepository;
+	
 	
 	
 	public Optional<Post>getPost(final long id ){
@@ -31,7 +35,7 @@ public class PostService {
 		return postRepository.findAll();
 	}
 
-	public void deleteComment(final Long id) {
+	public void deletePost(final Long id) {
 		postRepository.deleteById(id);
 	}
 	public Post savePost(Post Post) {

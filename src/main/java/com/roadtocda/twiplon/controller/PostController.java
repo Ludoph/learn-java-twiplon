@@ -15,13 +15,13 @@ public class PostController {
 	private PostService postService;
 	
 	
+	
 	@GetMapping("/Post")
 	public String Post(@RequestParam(name="name", required=false, defaultValue = "World")
 	String name, Model model) {
 		model.addAttribute("name", name);
 		model.addAttribute("LesPosts", postService.getPosts());
 		return "index";
-		
 	}
 	
 }

@@ -13,17 +13,16 @@
     Fil d'actu
   </h1>
   <main>
-    <div class="card" th:each="article : ${LesArticles}">
-      <h2 th:text="${article.image}" class="text-primary"></h2>
-      <h3 th:text="${article.typearticle.libelle}"></h3>
-      <p th:text="'Matiere : ' + ${article.typearticle.matiere}"></p>
-      <p th:text="'Prix : ' + ${article.typearticle.prix} + '€'"></p>
-      <p th:text="'Taille : ' + ${article.taille.libelle}"></p>
-      <p th:text="'Taille : ' + ${article.couleur.libelle}"></p>
-      <p th:text="'Quantité : ' + ${article.quantitestock}"></p>
+    <div class="card" th:each="post : ${LesPosts}">
+        <h3 th:text="${post.user.firstname}"></h3>
+        <h3 th:text="${post.user.lastname}"></h3>
+      <p th:text="${post.content}"></p>
+      <p th:text="${post.datecreation}"></p>
+      <button th:action="@{savePost}">❤️</button>
+      <button th:action="@{savePost}">❤️</button>
     </div>
   </p>
-  <a href="/typearticle.html" th:href="@{/TypeArticle}" class="btn btn-large btn-primary">Type Article</a>
+
   </main>
 </body>
 
