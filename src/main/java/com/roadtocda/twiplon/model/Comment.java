@@ -10,17 +10,53 @@ import jakarta.persistence.ManyToOne;
 @IdClass(CommentId.class)
 public class Comment {
     @Id
-    private Long id_user;
-
+    private int id_user;
     @Id
-    private Long idpost;
-
-    // Relation Many-to-One vers la publication (plusieurs commentaires sont associés à une publication)
+    private int idpost;
+// Relation Many-to-One vers la publication (plusieurs commentaires sont associés à une publication)
     @ManyToOne
     @JoinColumn(name = "idpost", insertable = false, updatable = false)
     private Post post;
+    
+	public int getId_user() {
+		return id_user;
+	}
 
-    // Getters et Setters (à générer ou écrire manuellement)
+// Getters et Setters (à générer ou écrire manuellement)
+	public Comment() {
+		
+	}
+	
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
+	}
 
-    // Autres méthodes et constructeurs si nécessaire
+	public int getIdpost() {
+		return idpost;
+	}
+
+	public void setIdpost(int idpost) {
+		this.idpost = idpost;
+	}
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
+
+// Autres méthodes et constructeurs si nécessaire
+	@Override
+	public String toString() {
+		return "Comment [id_user=" + id_user + ", idpost=" + idpost + ", post=" + post + ", getId_user()="
+				+ getId_user() + ", getIdpost()=" + getIdpost() + ", getPost()=" + getPost() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
+	
+
+
+	
 }
