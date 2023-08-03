@@ -15,7 +15,6 @@ public class PostController {
 	private PostService postService;
 	
 	
-	
 	@GetMapping("/Post")
 	public String Post(@RequestParam(name="name", required=false, defaultValue = "World")
 	String name, Model model) {
@@ -23,5 +22,4 @@ public class PostController {
 		model.addAttribute("LesPosts", postService.getPosts());
 		return "index";
 	}
-	
 }

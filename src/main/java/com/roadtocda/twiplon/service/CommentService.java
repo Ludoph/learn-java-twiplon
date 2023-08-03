@@ -38,11 +38,6 @@ public class CommentService {
 		return savedComment;
 	}
 	
-	public Iterable<Comment>getComment(){
-		return null;
-	}
-	
-	
 	
 
 	public CommentRepository getCommentRepository() {

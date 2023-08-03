@@ -1,7 +1,6 @@
 package com.roadtocda.twiplon.model;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
