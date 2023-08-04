@@ -1,5 +1,6 @@
 package com.roadtocda.twiplon.service;
 
+import java.sql.Timestamp;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class PostService {
 	@Autowired 
 	private CommentRepository commentRepository;
 	
+	@Autowired 
+	private LikeService likesService;
 	
 	
 	public Optional<Post>getPost(final long id ){
@@ -42,5 +45,12 @@ public class PostService {
 		Post savePost = postRepository.save(Post);
 		return savePost;
 	}
+	public Iterable<Post> getDatecreation(final Timestamp datecreation){
+		return postRepository.findAll();
+	}
+	public long getLikesCountForPost(Long postId) {
+		return likesService.countLikesByPostId(postId);
+	}
+	
 
 }

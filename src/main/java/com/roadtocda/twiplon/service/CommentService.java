@@ -38,30 +38,6 @@ public class CommentService {
 		return savedComment;
 	}
 	
-	
 
-	public CommentRepository getCommentRepository() {
-		return commentRepository;
-	}
-
-	public void setCommentRepository(CommentRepository commentRepository) {
-		this.commentRepository = commentRepository;
-	}
-
-	public UsersRepository getUserRepository() {
-		return userRepository;
-	}
-
-	public void setUserRepository(UsersRepository userRepository) {
-		this.userRepository = userRepository;
-	}
-
-	public PostRepository getPostrepRepository() {
-		return postrepRepository;
-	}
-
-	public void setPostrepRepository(PostRepository postrepRepository) {
-		this.postrepRepository = postrepRepository;
-	}
 	
 }

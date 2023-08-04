@@ -18,8 +18,6 @@ public class UsersService {
 		private CommentRepository commentRepository;
 		
 		
-
-		
 		public Optional<Users>getUser(final long id ){
 			return usersRepository.findById(id);
 		}
@@ -31,20 +29,7 @@ public class UsersService {
 			usersRepository.deleteById(id);
 		}
 		
-		public UsersRepository getUsersRepository() {
-			return usersRepository;
-		}
-		public void setUsersRepository(UsersRepository usersRepository) {
-			this.usersRepository = usersRepository;
-		}
-		
-		public CommentRepository getCommentRepository() {
-			return commentRepository;
-		}
-
-		public void setCommentRepository(CommentRepository commentRepository) {
-			this.commentRepository = commentRepository;
-		}
+	
 
 		
 		

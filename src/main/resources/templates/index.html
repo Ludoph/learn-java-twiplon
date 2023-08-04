@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -25,15 +26,20 @@
             <hr>
             <div class="content-card">
                 <p th:text="${post.content}"></p>
-                <p th:text="${post.datecreation}"></p>
             </div>
             <hr>
             <div class="bot-card">
-                <button id="btn-like" th:data-idpost='|${post.idpost}|'>❤️ </button>
-                <!-- <div class="comment-users">
-                    <p th:text="${post.user.username}"></p>
-                    <p th:text="${post.comments.text}"></p>
-                </div> -->
+                <div class="btn-interaction">
+                    <div class="coin-like">
+                        <p class="count-like" th:text="${@postService.getLikesCountForPost(post.idpost)}"></p>
+                        <button id="btn-like" th:data-idpost='|${post.idpost}|'><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <span><i class="fa-regular fa-comment"></i></span>
+                </div>
+                <div th:each="comment: ${post.comments}" class="comment-users">
+                    <p><i class="fa-solid fa-user"></i></p>
+                    <p th:text="${comment.text}"></p>
+                </div>
             </div>
         </div>
         </p>

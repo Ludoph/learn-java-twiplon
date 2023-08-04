@@ -7,5 +7,5 @@ import com.roadtocda.twiplon.model.Likes;
 
 @Repository
 public interface LikesRepository extends CrudRepository<Likes, Long> {
-
+	Long countByIdpost(Long idpost);
 }

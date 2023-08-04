@@ -12,7 +12,7 @@ import com.roadtocda.twiplon.repository.UsersRepository;
 public class LikeService {
 	
 	@Autowired
-	private LikesRepository likeRepository;
+	private LikesRepository likesRepository;
 	
 	@Autowired
 	private UsersRepository userRepository;
@@ -23,8 +23,11 @@ public class LikeService {
 	
 	public void likeSave(int id_user, int idpost) {
 		Likes likeSaved = new Likes(id_user, idpost);
-		likeRepository.save(likeSaved);
+		likesRepository.save(likeSaved);
 	}
 	
+	public long countLikesByPostId(Long idpost) {
+		return likesRepository.countByIdpost(idpost);
+	}
 	
 }

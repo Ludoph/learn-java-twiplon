@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
     text-decoration: none;
 }
 
@@ -51,7 +50,6 @@ main .card {
     justify-content: space-between;
     padding: 30px;
     font-size: 1.6em;
-    text-transform: capitalize;
  }
  .card .content-card {
     display: flex;
@@ -65,13 +63,29 @@ main .card {
     font-size: 1.6em;
     padding: 30px;
  }
+ .card .bot-card .btn-interaction{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.8em;
+    justify-content: space-around;
+ }
+ .card .bot-card .btn-interaction .coin-like{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ }
+ 
  .card .bot-card button {
     border: none;
     background-color: transparent;
     width: 80px;
-    font-size: 1.8em;
  }
 .card .bot-card .comment-users{
     display: flex;
     flex-direction: row;
+    padding: 40px;
+    font-size: 0.8em;
+}
+.card .bot-card .comment-users p {
+    margin-right: 20px;
 }
