@@ -20,13 +20,21 @@
         <div class="card" th:each="post : ${LesPosts}">
             <div class="top-card">
                 <p th:text="${post.user.username}"></p>
+                <p th:text="'Il y  a ' + ${differenceEnJours} + ' jours.'"></p>
+            </div>
+            <hr>
+            <div class="content-card">
+                <p th:text="${post.content}"></p>
                 <p th:text="${post.datecreation}"></p>
             </div>
-
-            <p th:text="${post.content}"></p>
-            <p th:text="${post.datecreation}"></p>
-            
-            <button id="btn-like" th:data-idpost='|${post.idpost}|'> LIKE ❤️ </button>
+            <hr>
+            <div class="bot-card">
+                <button id="btn-like" th:data-idpost='|${post.idpost}|'>❤️ </button>
+                <!-- <div class="comment-users">
+                    <p th:text="${post.user.username}"></p>
+                    <p th:text="${post.comments.text}"></p>
+                </div> -->
+            </div>
         </div>
         </p>
     </main>

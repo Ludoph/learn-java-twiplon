@@ -17,9 +17,12 @@ header {
     margin: 0 20px;
     border-bottom: 4px solid #676767;
 }
-
+header h1{
+    font-size: 1.8em;
+    font-weight: bold;
+}
 header img {
-    height: 80%;
+    height: 100%;
     padding: 20px;
 }
 
@@ -34,14 +37,41 @@ main {
 main .card {
     border: 2px solid #00698b;
     width: 35%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
+    background-color: #fff1f163;
+}
+.card hr {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #00698b;
 }
  .card .top-card {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #00698b;
+    padding: 30px;
+    font-size: 1.6em;
+    text-transform: capitalize;
  }
+ .card .content-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    font-size: 1.6em;
+ }
+ .card .bot-card{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6em;
+    padding: 30px;
+ }
+ .card .bot-card button {
+    border: none;
+    background-color: transparent;
+    width: 80px;
+    font-size: 1.8em;
+ }
+.card .bot-card .comment-users{
+    display: flex;
+    flex-direction: row;
+}

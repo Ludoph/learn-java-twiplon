@@ -1,5 +1,8 @@
 package com.roadtocda.twiplon.controller;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +23,12 @@ public class PostController {
 	String name, Model model) {
 		model.addAttribute("name", name);
 		model.addAttribute("LesPosts", postService.getPosts());
+		
+		LocalDate dateCreation = LocalDate.of(2023, 7, 15); 
+        LocalDate aujourdhui = LocalDate.now();
+	    long differenceEnJours = ChronoUnit.DAYS.between(dateCreation, aujourdhui);
+
+	        model.addAttribute("differenceEnJours", differenceEnJours);
 		return "index";
 	}
 }
