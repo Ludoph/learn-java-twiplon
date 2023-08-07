@@ -13,8 +13,8 @@ public class Comment {
     private int id_user;
     @Id
     private int idpost;
-
     private String text;
+    
 // Relation Many-to-One vers la publication (plusieurs commentaires sont associés à une publication)
     @ManyToOne
     @JoinColumn(name = "idpost", insertable = false, updatable = false)
@@ -26,7 +26,12 @@ public class Comment {
 
 // Getters et Setters (à générer ou écrire manuellement)
 	public Comment() {
-		
+	}
+	
+	public Comment (int id_user, int idpost, String text) {
+		this.id_user = id_user;
+		this.idpost = idpost;
+		this.text = text;
 	}
 	
 	public void setId_user(int id_user) {
@@ -63,13 +68,4 @@ public class Comment {
 	public String toString() {
 		return "Comment [id_user=" + id_user + ", idpost=" + idpost + ", text=" + text + ", post=" + post + "]";
 	}
-	
-	
-
-	
-
-	
-
-
-	
 }

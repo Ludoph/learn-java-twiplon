@@ -18,7 +18,7 @@ public class LikesController {
 	@PostMapping("/like")
 	public void Likes(@RequestBody Map<String, Long> requestBody) {
 		Long postId = requestBody.get("postId");
-		likeService.likeSave(20, postId.intValue());
+		likeService.likeSave(4, postId.intValue());
 	}
 	
 }

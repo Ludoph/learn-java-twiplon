@@ -33,11 +33,15 @@ public class CommentService {
 	public void deleteComment(final Long id) {
 		commentRepository.deleteById(id);
 	}
-	public Comment saveComment(Comment Comment) {
-		Comment savedComment = commentRepository.save(Comment);
-		return savedComment;
+	
+	public void commentSave(int id_user, int idpost, String text) {
+		Comment commentSaved = new Comment(id_user, idpost, text);
+		commentRepository.save(commentSaved);
 	}
 	
-
+//	public Iterable<Comment> getNewCommentsByUser(int id_user, int idpost, String text){
+//		Comment commentsUser = new Comment(id_user, idpost, text);
+//		return commentRepository.save(commentsUser);
+//	}
 	
 }

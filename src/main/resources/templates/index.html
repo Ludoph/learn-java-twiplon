@@ -6,7 +6,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css">
 </head>
 
 <body>
@@ -20,7 +20,10 @@
     <main>
         <div class="card" th:each="post : ${LesPosts}">
             <div class="top-card">
-                <p th:text="${post.user.username}"></p>
+                <div class="block-user-post">
+                    <p><i class="fa-solid fa-user"></i></p>
+                    <p th:text="${post.user.username}"></p>
+                </div>
                 <p th:text="'Il y  a ' + ${differenceEnJours} + ' jours.'"></p>
             </div>
             <hr>
@@ -32,18 +35,25 @@
                 <div class="btn-interaction">
                     <div class="coin-like">
                         <p class="count-like" th:text="${@postService.getLikesCountForPost(post.idpost)}"></p>
-                        <button id="btn-like" th:data-idpost='|${post.idpost}|'><i class="fa-regular fa-heart"></i></button>
+                        <button class="btn-like" th:data-idpost='|${post.idpost}|'><i class="fa-regular fa-heart"></i></button>
                     </div>
-                    <span><i class="fa-regular fa-comment"></i></span>
+                    <span class="btn-commentaire fa-regular fa-comment"></span>
                 </div>
                 <div th:each="comment: ${post.comments}" class="comment-users">
                     <p><i class="fa-solid fa-user"></i></p>
-                    <p th:text="${comment.text}"></p>
+                    <div class="comment-user">
+                        <p  th:if="${@usersService.getUser(comment.id_user).isPresent()}"
+                            th:text="${@usersService.getUser(comment.id_user).get().getUsername()}"></p>
+
+                        <p th:text="${comment.text}"></p>
+                    </div>
                 </div>
+                <textarea name="commentaire" class="commentaire" cols="30" rows="5"></textarea>
+                <button class="commenter" th:data-idcomment='|${post.idpost}|'>Commenter</button>
             </div>
         </div>
         </p>
     </main>
 </body>
-<script src="/script/script.js"></script>
+<script src="/script/script.js" th:src="@{/script/script.js}"></script>
 </html>

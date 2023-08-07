@@ -17,6 +17,9 @@ public class UsersService {
 		@Autowired
 		private CommentRepository commentRepository;
 		
+		@Autowired
+		private CommentService commentService;
+		
 		
 		public Optional<Users>getUser(final long id ){
 			return usersRepository.findById(id);
@@ -28,7 +31,6 @@ public class UsersService {
 		public void deleteComment(final Long id) {
 			usersRepository.deleteById(id);
 		}
-		
 	
 
 		

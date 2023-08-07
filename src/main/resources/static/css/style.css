@@ -50,6 +50,15 @@ main .card {
     justify-content: space-between;
     padding: 30px;
     font-size: 1.6em;
+    flex-wrap: wrap;
+ }
+ .card .top-card .block-user-post{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4em;
+ }
+ .card .top-card .block-user-post .fa-user{
+    margin-right: 20px;
  }
  .card .content-card {
     display: flex;
@@ -66,8 +75,9 @@ main .card {
  .card .bot-card .btn-interaction{
     display: flex;
     flex-direction: row;
-    font-size: 1.8em;
+    font-size: 1.2em;
     justify-content: space-around;
+    align-items: center;
  }
  .card .bot-card .btn-interaction .coin-like{
     display: flex;
@@ -88,4 +98,25 @@ main .card {
 }
 .card .bot-card .comment-users p {
     margin-right: 20px;
+}
+.card .bot-card .commentaire{
+    display: none;
+    padding: 20px;
+    font-size: 0.8em;
+    margin: 20px 0;
+    transition: all 0.2s;
+}
+.card .bot-card .commentair.active{
+    display: flex;
+}
+.fa-comment{
+    cursor: pointer;
+}
+.comment-user{
+    display: flex;
+    flex-direction: row;
+}
+.bot-card .commenter{
+    display: none;
+    font-size: 0.6em;
 }
