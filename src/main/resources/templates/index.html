@@ -42,7 +42,6 @@
                     <div class="comment-user">
                         <p  th:if="${@usersService.getUser(comment.id_user).isPresent()}"
                             th:text="${@usersService.getUser(comment.id_user).get().getUsername()} + ' :'"> </p>
-
                         <p th:text="${comment.text}"></p>
                     </div>
                 </div>
