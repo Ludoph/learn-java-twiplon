@@ -1,3 +1,4 @@
+// Like b
 document.querySelectorAll(".btn-like").forEach((btnLike) => {
   btnLike.addEventListener("click", function () {
     console.log(btnLike.dataset.idpost);
@@ -9,7 +10,10 @@ document.querySelectorAll(".btn-like").forEach((btnLike) => {
       body: JSON.stringify({ postId: btnLike.dataset.idpost }),
     })
       .then((response) => response.json())
-      .then((data) => {});
+      .then((data) => {
+        let likeCountElement = btnLike.querySelector(".count-like");
+        if ((likeCountElement.textContent = data.likeCount));
+      });
   });
 });
 
@@ -20,6 +24,7 @@ document.querySelectorAll(".fa-heart").forEach((heartChange) => {
   });
 });
 
+// Comment button
 const btnComment = document.querySelector(".btn-commentaire");
 let textComment = document.querySelector(".commentaire");
 const btnCommenter = document.querySelector(".commenter");
@@ -35,6 +40,7 @@ btnComment.addEventListener("click", function () {
   }
   isCommentVisible = !isCommentVisible;
 });
+
 btnCommenter.addEventListener("click", function () {
   console.log(btnCommenter);
   btnCommenter.style.display = "none";
@@ -51,10 +57,5 @@ btnCommenter.addEventListener("click", function () {
       commentId: btnCommenter.dataset.idcomment,
       textcomment: textComment.value,
     }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      let likeCount = data.likeCount;
-      btnLike.innerText = `Like (${likecount})`;
-    });
+  }).then((response) => response.json());
 });

@@ -11,11 +11,11 @@
 
 <body>
     <header>
-        <img src="/images/icone-twitter-rouge.png" alt="logotwiplon">
-        <h1 class="titre-page">
+        <i class="fa-brands fa-twitter"></i>
+        <p class="titre-page">
             Accueil
-        </h1>
-        <img src="/images/profil.png" alt="profil">
+        </p>
+        <i class="fa-solid fa-user"></i>
     </header>
     <main>
         <div class="card" th:each="post : ${LesPosts}">
@@ -26,11 +26,9 @@
                 </div>
                 <p th:text="'Il y  a ' + ${differenceEnJours} + ' jours.'"></p>
             </div>
-            <hr>
             <div class="content-card">
                 <p th:text="${post.content}"></p>
             </div>
-            <hr>
             <div class="bot-card">
                 <div class="btn-interaction">
                     <div class="coin-like">
@@ -39,11 +37,11 @@
                     </div>
                     <span class="btn-commentaire fa-regular fa-comment"></span>
                 </div>
-                <div th:each="comment: ${post.comments}" class="comment-users">
+                <div th:each="comment: ${post.comments}" th:attr="data-post-id=${post.idpost}"class="comment-users">
                     <p><i class="fa-solid fa-user"></i></p>
                     <div class="comment-user">
                         <p  th:if="${@usersService.getUser(comment.id_user).isPresent()}"
-                            th:text="${@usersService.getUser(comment.id_user).get().getUsername()}"></p>
+                            th:text="${@usersService.getUser(comment.id_user).get().getUsername()} + ' :'"> </p>
 
                         <p th:text="${comment.text}"></p>
                     </div>
@@ -55,5 +53,5 @@
         </p>
     </main>
 </body>
-<script src="/script/script.js" th:src="@{/script/script.js}"></script>
+<script th:src="@{/script/script.js}"></script>
 </html>
