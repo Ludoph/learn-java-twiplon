@@ -7,5 +7,5 @@ import com.roadtocda.twiplon.model.Users;
 
 @Repository
 public interface UsersRepository extends CrudRepository<Users, Long> {
-
+	
 }

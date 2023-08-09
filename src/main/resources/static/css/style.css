@@ -37,10 +37,10 @@ main {
 }
 
 main .card {
-    border: 2px solid #00698b;
+    border: 2px solid #b33232;
     width: 40%;
     margin-bottom: 4%;
-    background-color: rgba(255, 255, 255, 0.388)
+    background-color: rgb(255, 255, 255)
 }
 
  .card .top-card {
@@ -67,14 +67,17 @@ main .card {
     padding: 40px 60px;
     font-size: 1.6em;
     
+    
  }
  .card .bot-card{
     display: flex;
     flex-direction: column;
     font-size: 1.6em;
     padding: 30px;
-    background-color: #b33232;
-    color: #FFF;
+    background-color: #ffffff;
+    color: #b33232;
+    border-top: #b33232;
+
  }
  .card .bot-card .btn-interaction{
     display: flex;
@@ -82,6 +85,7 @@ main .card {
     font-size: 0.8em;
     justify-content: space-around;
     align-items: center;
+    width: 25%;
  }
  .card .bot-card .btn-interaction .coin-like{
     display: flex;
@@ -124,5 +128,6 @@ main .card {
 .bot-card .commenter{
     display: none;
     font-size: 0.6em;
-    color: #FFF;
+    color: #b33232;
+    align-self: flex-end;
 }

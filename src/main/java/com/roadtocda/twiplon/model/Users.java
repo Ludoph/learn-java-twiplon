@@ -52,7 +52,9 @@ public class Users {
 	public Timestamp getDatecreation() {
 		return datecreation;
 	}
-
+	public List<Post> getPosts() {
+		return posts;
+	}
 
 
 	public void setId_user(int id_user) {
@@ -78,4 +80,6 @@ public class Users {
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
+
+	
 }

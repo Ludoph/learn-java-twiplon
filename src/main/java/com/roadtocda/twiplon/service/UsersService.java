@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.roadtocda.twiplon.model.Users;
 import com.roadtocda.twiplon.repository.CommentRepository;
+import com.roadtocda.twiplon.repository.PostRepository;
 import com.roadtocda.twiplon.repository.UsersRepository;
 
 @Service
@@ -16,6 +17,8 @@ public class UsersService {
 
 		@Autowired
 		private CommentRepository commentRepository;
+		@Autowired
+		private PostRepository postRepository;
 		
 		@Autowired
 		private CommentService commentService;
@@ -32,7 +35,5 @@ public class UsersService {
 			usersRepository.deleteById(id);
 		}
 	
-
-		
-		
+	
 }

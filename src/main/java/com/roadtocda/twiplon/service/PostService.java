@@ -52,5 +52,4 @@ public class PostService {
 		return likesService.countLikesByPostId(postId);
 	}
 	
-
 }

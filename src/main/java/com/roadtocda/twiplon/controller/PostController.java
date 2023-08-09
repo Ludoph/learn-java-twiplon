@@ -27,8 +27,7 @@ public class PostController {
 		LocalDate dateCreation = LocalDate.of(2023, 7, 15); 
         LocalDate aujourdhui = LocalDate.now();
 	    long differenceEnJours = ChronoUnit.DAYS.between(dateCreation, aujourdhui);
-
-	        model.addAttribute("differenceEnJours", differenceEnJours);
+        model.addAttribute("differenceEnJours", differenceEnJours);
 		return "index";
 	}
 }

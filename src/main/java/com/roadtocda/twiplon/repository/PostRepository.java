@@ -7,5 +7,4 @@ import com.roadtocda.twiplon.model.Post;
 
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {
-
 }
