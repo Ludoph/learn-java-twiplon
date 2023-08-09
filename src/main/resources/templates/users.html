@@ -4,15 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Document</title>
 </head>
 <body>
-    <h1 class="titre-page" style="display: flex; justify-content: center;">
-    USERS
-  </h1>
-  <main style="margin: 10%; display: flex; flex-wrap: wrap; justify-content: center;">
+  <header>
+    <i class="fa-brands fa-twitter"></i>
+    <p class="titre-page">
+        Accueil
+    </p>
+    <i class="fa-solid fa-user"></i>
+</header>
+
+  <main>
         <h3 th:text="${user.username}"></h3>
-        
+        <p th:text="${user.firstname}"></p>
+        <p th:text="${user.lastname}"></p>
+
+        <div th:if="${userPosts}">
+          <div class="card" th:each="post: ${userPosts}">
+            <p th:text="${post.content}"></p>
+            
+          </div>
+        </div>
   </main>
 </body>
+<script th:src="@{/script/script.js}"></script>
+
 </html>

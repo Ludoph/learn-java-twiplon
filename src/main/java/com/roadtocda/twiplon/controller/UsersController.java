@@ -25,10 +25,13 @@ public class UsersController {
     public String Users(@RequestParam(name="id", required = true, defaultValue = "World") String name, Model model) {
         model.addAttribute("name", name);
         
-        Optional<Users> userOptional = usersService.getUser(3);
+        Optional<Users> userOptional = usersService.getUser(19);
         if (userOptional.isPresent()) {
         	Users user = userOptional.get();
         	model.addAttribute("user", user);
+        	
+        	Iterable<Post> userPosts = user.getPosts();
+        	model.addAttribute("userPosts", userPosts);
         }
 
 
