@@ -28,7 +28,19 @@
                     <p><i class="fa-solid fa-user"></i></p>
                     <p th:text="${post.user.username}"></p>
                 </div>
-                <p th:text="'Il y  a ' + ${differenceEnJours} + ' jours.'"></p>
+                <!-- <p th:text="'Il y  a ' + ${differenceEnJours} + ' jours, ' + ${differenceEnMois} + ' mois et ' + ${differenceEnAnnee} + ' ans.'"></p> -->
+                <p>
+                    Il y a 
+                    <span th:if="${differencesMap.get(post.idpost).get('jours') > 0}">
+                        [[${differencesMap.get(post.idpost).get('jours')}]] jours,
+                    </span>
+                    <span th:if="${differencesMap.get(post.idpost).get('mois') > 0}">
+                        [[${differencesMap.get(post.idpost).get('mois')}]] mois,
+                    </span>
+                    <span th:if="${differencesMap.get(post.idpost).get('annee') > 0}">
+                        [[${differencesMap.get(post.idpost).get('annee')}]] ans.
+                    </span>
+                </p>
             </div>
             <div class="content-card">
                 <p th:text="${post.content}"></p>
@@ -53,7 +65,7 @@
                 <button class="commenter" th:data-idcomment='|${post.idpost}|'>Commenter</button>
             </div>
         </div>
-        </p>
+        
     </main>
 </body>
 <script th:src="@{/script/script.js}"></script>

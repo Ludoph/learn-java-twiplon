@@ -22,6 +22,8 @@ public class Post {
 
     private String content;
     private Timestamp datecreation;
+    
+   
 
 // Clé étrangère vers l'utilisateur qui a créé la publication
     @ManyToOne
@@ -81,6 +83,30 @@ public class Post {
 	}
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public long getDifferenceEnAnnee() {
+		return differenceEnAnnee;
+	}
+
+	public void setDifferenceEnAnnee(long differenceEnAnnee) {
+		this.differenceEnAnnee = differenceEnAnnee;
+	}
+
+	public long getDifferenceEnMois() {
+		return differenceEnMois;
+	}
+
+	public void setDifferenceEnMois(long differenceEnMois) {
+		this.differenceEnMois = differenceEnMois;
+	}
+
+	public long getDifferenceEnJours() {
+		return differenceEnJours;
+	}
+
+	public void setDifferenceEnJours(long differenceEnJours) {
+		this.differenceEnJours = differenceEnJours;
 	}
 	
 

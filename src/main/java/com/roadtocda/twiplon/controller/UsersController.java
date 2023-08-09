@@ -33,8 +33,6 @@ public class UsersController {
         	Iterable<Post> userPosts = user.getPosts();
         	model.addAttribute("userPosts", userPosts);
         }
-
-
         return "users";
     }
 	

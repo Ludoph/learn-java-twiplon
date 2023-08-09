@@ -48,8 +48,8 @@ main .card {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 30px;
-    font-size: 1.6em;
+    padding: 18px;
+    font-size: 1.4em;
     flex-wrap: wrap;
     background-color: #b33232;
     color: #FFF;
@@ -67,8 +67,9 @@ main .card {
     flex-direction: column;
     padding: 40px 60px;
     font-size: 1.6em;
-    
-    
+ }
+ .card .top-card p{
+    font-size: 0.6em;
  }
  .card .bot-card{
     display: flex;
