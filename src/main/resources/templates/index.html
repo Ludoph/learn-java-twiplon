@@ -11,11 +11,15 @@
 
 <body>
     <header>
-        <i class="fa-brands fa-twitter"></i>
+        <a th:href="@{/}">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
         <p class="titre-page">
             Accueil
         </p>
-        <i class="fa-solid fa-user"></i>
+        <a th:href="@{/Profil}">
+            <i class="fa-solid fa-user"></i>
+        </a> 
     </header>
     <main>
         <div class="card" th:each="post : ${LesPosts}">

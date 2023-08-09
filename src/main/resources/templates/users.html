@@ -2,32 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <title>Document</title>
 </head>
+
 <body>
   <header>
-    <i class="fa-brands fa-twitter"></i>
+    <a th:href="@{/}">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
     <p class="titre-page">
-        Accueil
+      Accueil
     </p>
-    <i class="fa-solid fa-user"></i>
-</header>
+    <a th:href="@{/Profil}">
+      <i class="fa-solid fa-user"></i>
+    </a>
+  </header>
 
   <main>
-        <h3 th:text="${user.username}"></h3>
-        <p th:text="${user.firstname}"></p>
-        <p th:text="${user.lastname}"></p>
+    <h3 th:text="${user.username}"></h3>
+    <p th:text="${user.firstname}"></p>
+    <p th:text="${user.lastname}"></p>
 
-        <div th:if="${userPosts}">
-          <div class="card" th:each="post: ${userPosts}">
-            <p th:text="${post.content}"></p>
-            
-          </div>
-        </div>
+    <div th:if="${userPosts}">
+      <div class="card" th:each="post: ${userPosts}">
+        <p th:text="${post.content}"></p>
+
+      </div>
+    </div>
   </main>
 </body>
 <script th:src="@{/script/script.js}"></script>
