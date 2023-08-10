@@ -38,8 +38,8 @@ public class PostService {
 		return postRepository.findAll();
 	}
 
-	public void deletePost(final int idpost) {
-		postRepository.deleteById(idpost);
+	public void deletePost(final Long id) {
+		postRepository.deleteById(id);
 	}
 	public Post savePost(Post Post) {
 		Post savePost = postRepository.save(Post);

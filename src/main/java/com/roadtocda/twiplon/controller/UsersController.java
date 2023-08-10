@@ -39,10 +39,11 @@ public class UsersController {
         return "users";
     }
 	
-	@PostMapping("/deletePost/{postId}")
-    public String deletePost(@PathVariable int postId, @RequestParam(name = "id") int userId) {
-        postService.deletePost(postId);
-        return "redirect:/Profil?id=" + userId;
-    }
+	@PostMapping("/deletePost")
+	public String deletePost(@RequestParam(name = "postId") long postId) {
+	    postService.deletePost(postId);
+	    
+	    return "redirect:/Profil?id="+19;
+	}
 	
 }
