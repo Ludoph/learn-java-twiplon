@@ -14,8 +14,10 @@ import jakarta.persistence.OneToMany;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_user")
     private int id_user;
 
+    @Column(name = "username")
     private String username;
 	private String firstname;
     private String lastname;
@@ -57,8 +59,8 @@ public class Users {
 	}
 
 
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	public void setId_user(int userId) {
+		this.id_user = userId;
 	}
 
 	public void setUsername(String username) {

@@ -20,6 +20,11 @@
         </a> 
     </header>
     <main>
+        <form action="/addPost" method="post">
+            <input type="hidden" name="userId" value="19"> <!-- Remplacez 19 par l'ID de l'utilisateur actuel -->
+            <textarea name="newPostContent" rows="4" cols="50"></textarea>
+            <button type="submit">Publier le post</button>
+        </form>
         <div class="card" th:each="post : ${LesPosts}">
             <div class="top-card">
                 <div class="block-user-post">
