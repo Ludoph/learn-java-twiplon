@@ -15,26 +15,36 @@
       <i class="fa-brands fa-twitter"></i>
     </a>
     <p class="titre-page">
-      Accueil
+      Profil
     </p>
-    <a th:href="@{/Profil}">
-      <i class="fa-solid fa-user"></i>
+    <a th:href="@{/}">
+      <i class="fa-solid fa-gear"></i>   
     </a>
   </header>
 
-  <main>
-    <h3 th:text="${user.username}"></h3>
-    <p th:text="${user.firstname}"></p>
-    <p th:text="${user.lastname}"></p>
+  <main class="main-profil">
+    <div class="card-profil">
+      <img src="/images/photo-profil.jpeg" alt="photo-profil">
+      <h3 th:text="${user.username}"></h3>
+      <div class="identity-profil">
+        <p th:text="${user.firstname}"></p>
+        <p th:text="${user.lastname}"></p>
+      </div>
+    </div>
 
-    <div th:if="${userPosts}">
+    <div class="post-profil" th:if="${userPosts}">
       <div class="card" th:each="post: ${userPosts}">
-        <p th:text="${post.content}"></p>
-
+        <p class="post-date" th:text="${#dates.format(post.datecreation, 'dd/MM/yyyy')}"></p>
+        <p class="post-content" th:text="${post.content}"></p>
+        <div class="bot-card-post-profil">
+          <p class="count-like" th:text="${@postService.getLikesCountForPost(post.idpost)} + ' Likes'"></p>
+          <i class="fa-solid fa-trash" data-post-id="${post.idpost}" onclick="deletePost(this)"></i>
+        </div>
       </div>
     </div>
   </main>
 </body>
+
 <script th:src="@{/script/script.js}"></script>
 
 </html>

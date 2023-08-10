@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.roadtocda.twiplon.model.Post;
@@ -25,6 +27,7 @@ public class UsersController {
     public String Users(@RequestParam(name="id", required = true, defaultValue = "World") String name, Model model) {
         model.addAttribute("name", name);
         
+        
         Optional<Users> userOptional = usersService.getUser(19);
         if (userOptional.isPresent()) {
         	Users user = userOptional.get();
@@ -34,6 +37,12 @@ public class UsersController {
         	model.addAttribute("userPosts", userPosts);
         }
         return "users";
+    }
+	
+	@PostMapping("/deletePost/{postId}")
+    public String deletePost(@PathVariable int postId, @RequestParam(name = "id") int userId) {
+        postService.deletePost(postId);
+        return "redirect:/Profil?id=" + userId;
     }
 	
 }

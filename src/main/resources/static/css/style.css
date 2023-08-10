@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *,
 ::before,
 ::after {
@@ -19,14 +21,15 @@ header {
     padding: 0 20px;
     background-color: #b33232;
     color: #FFF;
+    font-family: 'Bodoni Moda', serif;
 }
 
 header p{
+    font-size: 2em;
     text-transform: uppercase;
-    font-size: 1em;
 }
 header a {
-    font-size: 2em;
+    font-size: 1.6em;
     color: #FFF;
 }
 main {
@@ -35,7 +38,78 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter', sans-serif;
 }
+.main-profil{
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+.card-profil {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 60vh;
+    position: fixed;
+    top: 15%;
+    left: 5%;
+    padding: 40px;
+    background-color: #b33232;
+    color: #ffffff;
+}
+.card-profil img {
+    border-radius: 50%;
+    width: 200px;
+    display: flex;
+    align-self: center;
+}
+.card-profil h3 {
+    margin: 20px 0;
+}
+.card-profil .identity-profil {
+    display: flex;
+    flex-direction: row;
+    font-style: italic;
+}
+.card-profil .identity-profil p {
+    margin-right: 10px;
+    font-weight: 200;
+}
+.main-profil .post-profil{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.main-profil .post-profil .card{
+    width: 100%;
+}
+.main-profil .post-profil .card .post-date{
+    background-color: #b33232;
+    padding: 20px 40px;
+    color: #FFF;
+}
+.main-profil .post-profil .card .post-content{
+    padding:  40px;
+}
+.main-profil .post-profil .card .bot-card-post-profil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:  20px 40px;
+    border-top: 1px solid #b33232;
+    color: #b33232;
+}
+.main-profil .post-profil .card .bot-card-post-profil i{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.main-profil .post-profil .card .bot-card-post-profil i:hover{
+    transform: scale(1.2);
+}
+
+
+
+
 
 main .card {
     border: 2px solid #b33232;
@@ -54,11 +128,15 @@ main .card {
     background-color: #b33232;
     color: #FFF;
  }
+
  .card .top-card .block-user-post{
     display: flex;
     flex-direction: row;
     font-size: 1.4em;
+    font-family: 'Bodoni Moda', serif;
+
  }
+
  .card .top-card .block-user-post .fa-user{
     margin-right: 20px;
  }

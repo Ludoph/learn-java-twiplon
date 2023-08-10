@@ -66,3 +66,40 @@ btnsComment.forEach((btnComment) => {
     }).then((response) => response.json());
   });
 });
+
+function deletePost(iconElement) {
+  var postId = iconElement.getAttribute("data-post-id");
+  var postDate = iconElement.parentElement
+    .querySelector(".post-date")
+    .getAttribute("data-post-date");
+  var postContent = iconElement.parentElement
+    .querySelector(".post-content")
+    .getAttribute("data-post-content");
+  var likesCount = iconElement.parentElement
+    .querySelector(".count-like")
+    .getAttribute("data-likes-count");
+
+  if (
+    confirm(
+      "Voulez-vous vraiment supprimer ce post?\nDate : " +
+        postDate +
+        "\nContenu : " +
+        postContent +
+        "\nLikes : " +
+        likesCount
+    )
+  ) {
+    // Utiliser AJAX pour supprimer le post
+    $.ajax({
+      url: "/deletePost/" + postId, // Remplacez par l'URL correcte de votre endpoint de suppression
+      type: "DELETE",
+      success: function (response) {
+        // Mettre à jour l'interface utilisateur après la suppression réussie
+        // Par exemple, supprimer le post du DOM ou rafraîchir la liste des posts
+      },
+      error: function (error) {
+        // Gérer les erreurs en cas d'échec de la suppression
+      },
+    });
+  }
+}
