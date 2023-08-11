@@ -33,6 +33,10 @@ public class CommentService {
 	public void deleteComment(final Long id) {
 		commentRepository.deleteById(id);
 	}
+	public Comment saveComment(Comment comment) {
+		Comment saveComment = commentRepository.save(comment);
+		return saveComment;
+	}
 	
 	public void commentSave(int id_user, int idpost, String text) {
 		Comment commentSaved = new Comment(id_user, idpost, text);

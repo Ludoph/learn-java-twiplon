@@ -1,5 +1,6 @@
 package com.roadtocda.twiplon.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -10,9 +11,14 @@ import jakarta.persistence.ManyToOne;
 @IdClass(CommentId.class)
 public class Comment {
     @Id
+    @Column(name = "id_user")
     private int id_user;
+    
     @Id
+    @Column(name= " idpost")
     private int idpost;
+    
+    @Column(name = "text")
     private String text;
     
 // Relation Many-to-One vers la publication (plusieurs commentaires sont associés à une publication)
@@ -23,6 +29,18 @@ public class Comment {
 	public int getId_user() {
 		return id_user;
 	}
+	
+	@ManyToOne
+    @JoinColumn(name = "id_user")
+    private Users user;
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 
 // Getters et Setters (à générer ou écrire manuellement)
 	public Comment() {

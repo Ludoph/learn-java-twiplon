@@ -13,12 +13,15 @@ body{
     background-color: #efefef;
 }
 header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 20px;
+    padding: 0 40px;
     background-color: #b33232;
     color: #FFF;
     font-family: 'Bodoni Moda', serif;
@@ -48,23 +51,25 @@ main {
 .card-profil {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 18%;
     height: 60vh;
     position: fixed;
-    top: 15%;
+    top: 10%;
     left: 5%;
     padding: 40px;
-    background-color: #b33232;
-    color: #ffffff;
+    color: #b33232;
+    background-color: #FFF;
 }
 .card-profil img {
     border-radius: 50%;
-    width: 200px;
+    border: 2px solid #b33232;
+    width: 120px;
     display: flex;
     align-self: center;
+    margin-bottom: 40px;
 }
 .card-profil h3 {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .card-profil .identity-profil {
     display: flex;
@@ -106,20 +111,23 @@ main {
 .main-profil .post-profil .card .bot-card-post-profil i:hover{
     transform: scale(1.2);
 }
-main form {
+main .new-post {
     width: 40%;
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
     margin-bottom: 2%;
 }
-main form textarea{
+main .new-post textarea{
     color: #b33232;
     padding: 20px;
     font-family: 'Inter', sans-serif;
     margin-bottom: 2%;
+    border: none;
+    border-radius: 5px;
 }
-main form button{
+main .new-post button{
+    border-radius: 5px;
     padding: 12px 40px;
     border: none;
     font-size: 1.2em;
@@ -127,17 +135,17 @@ main form button{
     transition: all 0.3s;
     background-color: #b33232;
 }
-main form button:hover{
+main .new-post button:hover{
     background-color: #b3323280;
 }
 
 
 
 main .card {
-    border: 2px solid #b33232;
     width: 40%;
-    margin-bottom: 4%;
-    background-color: rgb(255, 255, 255)
+    margin-bottom: 2%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
 }
 
  .card .top-card {
@@ -147,9 +155,9 @@ main .card {
     padding: 18px;
     font-size: 1.4em;
     flex-wrap: wrap;
-    background-color: #b33232;
-    color: #FFF;
- }
+    /* background-color: #b33232; */ 
+    color: #b33232;
+}
 
  .card .top-card .block-user-post{
     display: flex;
@@ -161,12 +169,15 @@ main .card {
 
  .card .top-card .block-user-post .fa-user{
     margin-right: 20px;
+    border: 2px solid #b33232;
+    border-radius: 50%;
+    padding: 10px;
  }
  .card .content-card {
     display: flex;
     flex-direction: column;
     padding: 40px 60px;
-    font-size: 1.6em;
+    font-size: 1.2em;
  }
  .card .top-card p{
     font-size: 0.6em;
@@ -195,10 +206,8 @@ main .card {
     align-items: center;
  }
  
- .card .bot-card button {
-    border: none;
-    background-color: transparent;
-    width: 80px;
+ .card .bot-card .fa-heart {
+    margin-left: 10px;
  }
 .card .bot-card .comment-users{
     display: flex;

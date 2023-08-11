@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <link rel="icon" href="/images/icone-twitter-rouge.png" type="image/png">
+        <title>Twiplon</title>
+    </head>
+</head>
+
+<body>
+    <h1>Connexion</h1>
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Nom d'utilisateur">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <button type="submit">Se connecter</button>
+    </form>
+</body>
+
+</html>
