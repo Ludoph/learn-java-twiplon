@@ -14,6 +14,8 @@ import com.roadtocda.twiplon.model.Users;
 import com.roadtocda.twiplon.service.PostService;
 import com.roadtocda.twiplon.service.UsersService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class UsersController {
 	
@@ -44,5 +46,72 @@ public class UsersController {
 	    
 	    return "redirect:/Profil?id="+19;
 	}
+	
+	@GetMapping("/login")
+    public String showLoginForm() {
+        return "connexion";
+    }
+	
+	@PostMapping("/login")
+    public String processLogin(@RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               HttpSession session) {
+        Optional<Users> user = usersService.getUserByUsername(username);
+        
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            session.setAttribute("loggedInUser", user.get());
+            return "redirect:/Profil"; // Redirect to the home page after successful login
+        } else {
+            return "redirect:/login?error=true"; // Redirect to login page with error parameter
+        }
+    }
+
+    @GetMapping("/dashboard")
+    public String showDashboard() {
+        return "dashboard";
+    }
+    
+    /*
+     
+     @Autowired
+    private UsersService usersService;
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "login"; // Return the login page view
+    }
+
+    @PostMapping("/login")
+    public String processLogin(@RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               HttpSession session) {
+        Optional<Users> user = usersService.getUserByUsername(username);
+        
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            session.setAttribute("loggedInUser", user.get());
+            return "redirect:/home"; // Redirect to the home page after successful login
+        } else {
+            return "redirect:/login?error=true"; // Redirect to login page with error parameter
+        }
+    }
+
+    @GetMapping("/home")
+    public String showHomePage(HttpSession session) {
+        Users loggedInUser = (Users) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            // Show the home page for the logged-in user
+            return "home";
+        } else {
+            return "redirect:/login"; // Redirect to login page if not logged in
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("loggedInUser");
+        return "redirect:/login"; // Redirect to login page after logout
+    }
+     
+     */
 	
 }

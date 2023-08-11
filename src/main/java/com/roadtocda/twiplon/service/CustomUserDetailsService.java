@@ -28,5 +28,5 @@ public class CustomUserDetailsService  {
             user.getPassword(), // Mot de passe (crypté)
             new ArrayList<>() // Liste des rôles / autorisations (à implémenter)
         );
-    }rm
+    }
 }
