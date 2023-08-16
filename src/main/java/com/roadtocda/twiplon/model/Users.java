@@ -16,15 +16,19 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private int id_user;
-
     @Column(name = "username")
     private String username;
 	private String firstname;
     private String lastname;
     @Column(columnDefinition = "DATE")
     private Timestamp datecreation;
+<<<<<<< HEAD
     @Column(name = "password")
     private String password;
+=======
+    private String password;
+    
+>>>>>>> refs/remotes/origin/main
 
     
 // Relation One-to-Many avec les publications (un utilisateur peut avoir plusieurs publications)

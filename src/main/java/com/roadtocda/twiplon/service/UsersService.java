@@ -24,16 +24,29 @@ public class UsersService {
 		private CommentService commentService;
 		
 		
-		public Optional<Users>getUser(final long id ){
-			return usersRepository.findById(id);
-		}
-		public Iterable<Users> getUsers(){
-			return usersRepository.findAll();
-		}
+		
 
-		public void deleteComment(final Long id) {
-			usersRepository.deleteById(id);
+
+	    public Optional<Users> getUser(final long id) {
+	        return usersRepository.findById(id);
+	    }
+
+	    public Iterable<Users> getUsers() {
+	        return usersRepository.findAll();
+	    }
+
+	    public void deleteUserById(long id) {
+	        usersRepository.deleteById(id);
+	    }
+
+	  
+
+	    public void deleteComment(final Long id) {
+	        usersRepository.deleteById(id);
+	    }
+
+		public Optional<Users> getUserByUsername(String username) {
+			// TODO Auto-generated method stub
+			return null;
 		}
-	
-	
 }

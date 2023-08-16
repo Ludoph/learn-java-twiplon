@@ -22,10 +22,17 @@
         </a> 
     </header>
     <main>
+<<<<<<< HEAD
         <form action="/addPost" method="post">
             <input type="hidden" name="userId" value="19"> <!-- Remplacez 19 par l'ID de l'utilisateur actuel -->
             <textarea name="newPostContent" rows="1" cols="50"></textarea>
             <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+=======
+        <form class="new-post" action="/addPost" method="post">
+            <input type="hidden" name="userId" value="19"> 
+            <textarea name="newPostContent" rows="2" cols="50"></textarea>
+            <button type="submit">Publier le post</button>
+>>>>>>> refs/remotes/origin/main
         </form>
         <div class="card" th:each="post : ${LesPosts}">
             <div class="top-card">
@@ -53,7 +60,7 @@
                 <div class="btn-interaction">
                     <div class="coin-like">
                         <p class="count-like" th:text="${@postService.getLikesCountForPost(post.idpost)}"></p>
-                        <button class="btn-like" th:data-idpost='|${post.idpost}|'><i class="fa-regular fa-heart"></i></button>
+                        <span class="btn-like fa-regular fa-heart" th:data-idpost='|${post.idpost}|'></span>
                     </div>
                     <span class="btn-commentaire fa-regular fa-comment"></span>
                 </div>
@@ -65,8 +72,17 @@
                         <p th:text="${comment.text}"></p>
                     </div>
                 </div>
-                <textarea name="commentaire" class="commentaire" cols="30" rows="5"></textarea>
-                <button class="commenter" th:data-idcomment='|${post.idpost}|'>Commenter</button>
+                <!-- <form class="new-comment" action="/addComment" method="post">
+                    <input type="hidden" name="userId" value="19">
+                    <input type="hidden" name="postId" value="${post.idpost}">
+                    <textarea name="newCommentPost" class="commentaire" cols="30" rows="5"></textarea>
+                    <button class="commenter" type="submit">Commenter</button>
+                </form> -->
+                
+                    <textarea name="newCommentPost" class="commentaire" cols="30" rows="5"></textarea>
+                    <button class="commenter" th:data-idcomment='|${post.idpost}|'>Commenter</button>
+                    <button class="commenter">Commenter</button>
+                
             </div>
         </div>
         
