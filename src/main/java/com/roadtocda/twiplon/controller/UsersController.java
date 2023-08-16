@@ -14,6 +14,8 @@ import com.roadtocda.twiplon.model.Users;
 import com.roadtocda.twiplon.service.PostService;
 import com.roadtocda.twiplon.service.UsersService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class UsersController {
 	
@@ -23,18 +25,15 @@ public class UsersController {
 	
 	
 	@GetMapping("/Profil")
-    public String Users(@RequestParam(name="id", required = true, defaultValue = "World") String name, Model model) {
-        model.addAttribute("name", name);
+    public String Users(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
         
+        // Utilisez l'ID utilisateur pour récupérer les informations du profil
+        // ...
         
-        Optional<Users> userOptional = usersService.getUser(19);
-        if (userOptional.isPresent()) {
-        	Users user = userOptional.get();
-        	model.addAttribute("user", user);
-        	
-        	Iterable<Post> userPosts = postService.getUserPostsSortedByDateDesc(19);
-        	model.addAttribute("userPosts", userPosts);
-        }
+        // Passez les informations du profil à la vue
+        model.addAttribute("userInfo", usersService.getUser(0));
+        
         return "users";
     }
 	

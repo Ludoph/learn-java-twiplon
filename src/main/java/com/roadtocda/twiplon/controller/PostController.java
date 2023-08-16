@@ -29,7 +29,6 @@ public class PostController {
 	String name, Model model) {
 		model.addAttribute("name", name);
 		
-//		Iterable<Post> posts = postService.getPosts();
 		Iterable<Post> posts = postService.getPostsSortedByDateDesc();
 		Map<Integer, Map<String, Long>> differencesMap = new HashMap<>();
 		

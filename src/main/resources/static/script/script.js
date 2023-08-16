@@ -45,7 +45,6 @@ btnsComment.forEach((btnComment) => {
     }
     isCommentVisible = !isCommentVisible;
   });
-
   btnCommenter.addEventListener("click", function () {
     console.log(btnCommenter);
     btnCommenter.style.display = "none";

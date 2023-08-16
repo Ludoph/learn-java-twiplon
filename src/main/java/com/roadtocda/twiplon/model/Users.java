@@ -23,6 +23,8 @@ public class Users {
     private String lastname;
     @Column(columnDefinition = "DATE")
     private Timestamp datecreation;
+    @Column(name = "password")
+    private String password;
 
     
 // Relation One-to-Many avec les publications (un utilisateur peut avoir plusieurs publications)
@@ -57,6 +59,9 @@ public class Users {
 	public List<Post> getPosts() {
 		return posts;
 	}
+	public String getPassword() {
+		return password;
+	}
 
 
 	public void setId_user(int userId) {
@@ -81,6 +86,9 @@ public class Users {
 
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	

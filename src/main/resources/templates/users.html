@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" th:href="@{/css/style.css}" />
-  <title>Document</title>
+  <link rel="icon" href="/images/icone-twitter-rouge.png" type="image/png">
+  <title>Twiplon</title>
 </head>
 
 <body>
@@ -31,7 +32,11 @@
         <p th:text="${user.lastname}"></p>
       </div>
     </div>
-
+    <form action="/addPost" method="post">
+      <input type="hidden" name="userId" value="19"> <!-- Remplacez 19 par l'ID de l'utilisateur actuel -->
+      <textarea name="newPostContent" rows="1" cols="40" placeholder="Ecrivez votre post"></textarea>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
     <div class="post-profil" th:if="${userPosts}">
       <div class="card" th:each="post: ${userPosts}">
         <p class="post-date" th:text="${#dates.format(post.datecreation, 'dd/MM/yyyy')}"></p>

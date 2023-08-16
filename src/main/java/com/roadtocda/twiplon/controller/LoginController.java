@@ -1,0 +1,19 @@
+package com.roadtocda.twiplon.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.roadtocda.twiplon.service.UsersService;
+
+@Controller
+public class LoginController {
+
+		@Autowired
+		private UsersService usersService;
+		
+		@GetMapping("/login")
+		private String showProfil() {
+			return "connexion";
+		}
+}
